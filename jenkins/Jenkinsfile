@@ -1,0 +1,19 @@
+pipeline {
+    agent any
+    environment {
+        CI = 'true'
+
+    }
+    stages {
+        stage('Build') {
+            steps {
+                sh 'docker compose -f docker-compose.production.yaml build'
+            }
+        }
+        stage('Deliver') {
+            steps {
+                sh 'docker compose -f docker-compose.production.yaml up '
+            }
+        }
+    }
+}
