@@ -49,7 +49,7 @@ services:
     image: redis:alpine
     restart: always
     command: ['sh', '-c', 'redis-server --requirepass "$REDIS_PASSWORD"']
-    env_file: .env
+    env_file: .env.example
     volumes:
       - /data/redis:/data
     ports:
