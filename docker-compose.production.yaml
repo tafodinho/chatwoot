@@ -13,13 +13,13 @@ services:
       - postgres
       - redis
     ports:
-      - '127.0.0.1:3000:3000'
+      - '127.0.0.1:3002:3002'
     environment:
       - NODE_ENV=production
       - RAILS_ENV=production
       - INSTALLATION_ENV=docker
     entrypoint: docker/entrypoints/rails.sh
-    command: ['bundle', 'exec', 'rails', 's', '-p', '3000', '-b', '0.0.0.0']
+    command: ['bundle', 'exec', 'rails', 's', '-p', '3002', '-b', '0.0.0.0']
 
   sidekiq:
     <<: *base
@@ -43,7 +43,7 @@ services:
       - POSTGRES_DB=chatwoot
       - POSTGRES_USER=postgres
       # Please provide your own password.
-      - POSTGRES_PASSWORD=
+      - POSTGRES_PASSWORD=google#12345
 
   redis:
     image: redis:alpine
