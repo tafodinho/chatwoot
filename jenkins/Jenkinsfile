@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'docker compose run --rm rails bundle exec rails db:chatwoot_prepare'
+                sh 'docker compose build --rm rails bundle exec rails db:chatwoot_prepare'
             }
         }
         stage('Deliver') {

@@ -10,7 +10,7 @@ services:
         RAILS_SERVE_STATIC_FILES: 'false'
     tty: true
     stdin_open: true
-    # image: chatwoot:development
+    image: chatii:development
     env_file: .env.example
 
   rails:
@@ -18,7 +18,7 @@ services:
     build:
       context: .
       dockerfile: ./docker/dockerfiles/rails.Dockerfile
-    # image: chatwoot-rails:development
+    image: chatii-rails:development
     volumes:
       - ./:/app:delegated
       - node_modules:/app/node_modules
