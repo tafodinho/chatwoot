@@ -115,4 +115,4 @@ COPY --from=pre-builder /app/.git_sha /app/.git_sha
 
 WORKDIR /app
 
-EXPOSE 3002
+EXPOSE 3000
